@@ -49,8 +49,95 @@ var carVariants = {
                 wheels: 4,
             }
         },
+        
+        yaris: {
+            type: {
+                image: "https://lahorirentacar.com/wp-content/uploads/2022/01/New-Model-Toyota-Yaris-2021-for-Rent-in-Lahore.png",
+                name: "Toyota Yaris",
+                model: 2022,
+                price: 22000,
+                colors: ["blue", "gray", "white"],
+                doors: 4,
+                wheels: 4,
+            }
+        },
+    
+
+        landCruiser: {
+            type: {
+                image: "https://cdn.bolnews.com/wp-content/uploads/2023/07/FotoJet-2023-07-12T172924.647.jpg",
+                name: "Toyota Land Cruiser",
+                model: 2022,
+                price: 85000,
+                colors: ["blue", "black", "white"],
+                doors: 4,
+                wheels: 4,
+            }
+        },
+
+        highlander: {
+            type: {
+                image: "https://www.buyatoyota.com/assets/img/vehicle-info/Highlander/2023/hero_image_highlander.png",
+                name: "Toyota Highlander",
+                model: 2023,
+                price: 38000,
+                colors: ["red", "black", "white"],
+                doors: 4,
+                wheels: 4,
+            }
+        },
+        supra: {
+            type: {
+                image: "https://images8.alphacoders.com/107/thumb-1920-1070993.jpg",
+                name: "Toyota Supra",
+                model: 2022,
+                price: 55000,
+                colors: ["yellow", "black", "red"],
+                doors: 2,
+                wheels: 4,
+            }
+        },
+        teslaModelS: {
+            type: {
+                image: "https://mysterio.yahoo.com/mysterio/api/5060465963781036D7ACF9D3875338F6F60EAA3BAA4CE2F322FB69194FE20B7F/autoblog/resizefill_w660_h372;quality_80;format_webp;cc_31536000;/https://s.aolcdn.com/commerce/autodata/images/USC20TSC021A0101.jpg",
+                name: "Tesla Model S",
+                model: 2023,
+                price: 89999,
+                colors: ["red", "blue", "gray"],
+                doors: 4,
+                wheels: 4,
+            }
+        },
+
+        bmwM3: {
+            type: {
+                image: "https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331cqgv2Z7d%25i02uCaY3MuO2kOHUtWPfbYf0jUi10tLhu1XzWVo7puMLWFmdkAj5DOPitppZ8XgY1nTNIowJ4HO3zkyXq%25sGM8snGhMQSk%2508Xc9Vo74gtZWNF1VgxNJ0%25lI2oub5imC2yRCzXeTt%25ViPRKVZVYVeHWh1DMzt4i%25eqVYDafaOojmztYRSJdw67aftxdTgDw1RSfWQlEW%25VxdSeZG4NuzWQdjc9NO3aeZQ6KownXRjcZwBL1Lrx6Kc%252ywQ4WwBKupCVFFe%252B3in2ZIjup2XH51zv63iprJ8VWGwXHi4TPgR9%25rJHFlMgPou4TJIsDoiL3FlTv0YPiyXIslGAT5tCrv0s9Ol%259E4GA0og8ZTNF9OALUPwnkIogOybMxrnvLUgChDWP5GybUEqY6e89ChbNmtstPoEqhk7NigMLNmqn1kHJDyk7m5VnbbYCn178z5GPtE5V1Pa12SfNwVKJZR19mspzweqKhN7DlMA84Fo1",
+                name: "BMW M3",
+                model: 2022,
+                price: 79999,
+                colors: ["black", "white", "gray"],
+                doors: 4,
+                wheels: 4,
+            }
+        },
 
     },
+
+ 
+    // supra: {
+    //     type: {
+    //         image: "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/19supra-3qtr-1566985377.jpg",
+    //         name: "Toyota Supra",
+    //         model: 2022,
+    //         price: 55000,
+    //         colors: ["yellow", "black", "red"],
+    //         doors: 2,
+    //         wheels: 4,
+    //     }
+    // },
+
+
+    
 
 }
 
@@ -63,44 +150,86 @@ company.innerHTML = `<option value="">Select Company</option>`
 brand.innerHTML = `<option value="">Select Company</option>`
 
 
+// for (var key in carVariants) {
+//     //  console.log(key);   
+//     company.innerHTML += `
+//  <option value="${key}">
+//  ${key.toUpperCase()}
+//  </option>
+//  `
+//     for (var key1 in carVariants[key]) {
+//         for (var key2 in carVariants[key][key1]) {
+//             var carData = carVariants[key][key1][key2]
+//             var colorsDiv = ""
+//             for (var i = 0; i < carData.colors.length; i++) {
+//                 // console.log(carData.colors[i]);
+//                 colorsDiv += `<div class="me-2" style="border:1px solid; width: 20px; height: 20px; border-radius: 10px; background-color:${carData.colors[i]}"></div>`
+//             }
+//             //  console.log(colorsDiv)
+//             // console.log( carVariants[key][key1][key2]);
+//             allCars.innerHTML += `
+// <div class="col-md-3 mb-2">
+// <div class="card" >
+// <img src="${carData.image}" class="card-img-top" alt="...">
+//     <div class="card-body">
+//         <h5 class="card-title">${carData.name || "unknown"}</h5>
+//         <h6 class="card-subtitle mb-2 text-body-secondary">${carData.model}</h6>
+//         <h2>Rs ${carData.price}</h2>
+
+// <div class="d-flex">
+
+// ${colorsDiv}
+// </div>
+//     </div>
+// </div>
+// </div>
+// `
+//         }
+//     }
+
+// }
+
+
+
+//chatgpt
+
 for (var key in carVariants) {
     //  console.log(key);   
     company.innerHTML += `
- <option value="${key}">
- ${key.toUpperCase()}
- </option>
- `
+        <option value="${key}">
+            ${key.toUpperCase()}
+        </option>
+    `
     for (var key1 in carVariants[key]) {
         for (var key2 in carVariants[key][key1]) {
-            var carData = carVariants[key][key1][key2]
-            var colorsDiv = ""
-            for (var i = 0; i < carData.colors.length; i++) {
-                // console.log(carData.colors[i]);
-                colorsDiv += `<div class="me-2" style="border:1px solid; width: 20px; height: 20px; border-radius: 10px; background-color:${carData.colors[i]}"></div>`
+            var carData = carVariants[key][key1][key2];
+            var colorsDiv = "";
+
+            if (carData.colors && Array.isArray(carData.colors)) {
+                for (var i = 0; i < carData.colors.length; i++) {
+                    colorsDiv += `<div class="me-2" style="border:1px solid; width: 20px; height: 20px; border-radius: 10px; background-color:${carData.colors[i]}"></div>`
+                }
             }
-            //  console.log(colorsDiv)
-            // console.log( carVariants[key][key1][key2]);
+
             allCars.innerHTML += `
-<div class="col mb-2">
-<div class="card" >
-<img src="${carData.image}" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">${carData.name || "unknown"}</h5>
-        <h6 class="card-subtitle mb-2 text-body-secondary">${carData.model}</h6>
-        <h2>Rs ${carData.price}</h2>
-
-<div class="d-flex">
-
-${colorsDiv}
-</div>
-    </div>
-</div>
-</div>
-`
+                <div class="col-md-3 mb-2">
+                    <div class="card">
+                        <img src="${carData.image}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">${carData.name || "unknown"}</h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">${carData.model}</h6>
+                            <h2>Rs ${carData.price}</h2>
+                            <div class="d-flex">
+                                ${colorsDiv}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
         }
     }
-
 }
+
 // for(key1 in carVariants[key]){
 //     // console.log(key1);  
 //  }
@@ -152,3 +281,50 @@ function filterCars() {
     </div>
     `
 }
+
+// Assuming you have a reference to the element with id "smitCarsLink"
+var smitCarsLink = document.getElementById("smitCarsLink");
+
+smitCarsLink.addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+
+    // Clear the selected options in the company and brand dropdowns (if any)
+    company.value = "";
+    brand.value = "";
+
+    // Clear the content of the "allCars" element
+    allCars.innerHTML = "";
+
+    // Render all cars again
+    for (var key in carVariants) {
+        company.innerHTML += `
+            <option value="${key}">
+                ${key.toUpperCase()}
+            </option>
+        `
+        for (var key1 in carVariants[key]) {
+            for (var key2 in carVariants[key][key1]) {
+                var carData = carVariants[key][key1][key2]
+                var colorsDiv = ""
+                for (var i = 0; i < carData.colors.length; i++) {
+                    colorsDiv += `<div class="me-2" style="border:1px solid; width: 20px; height: 20px; border-radius: 10px; background-color:${carData.colors[i]}"></div>`
+                }
+                allCars.innerHTML += `
+                    <div class="col-md-3 mb-2">
+                        <div class="card" >
+                            <img src="${carData.image}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">${carData.name || "unknown"}</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">${carData.model}</h6>
+                                <h2>Rs ${carData.price}</h2>
+                                <div class="d-flex">
+                                    ${colorsDiv}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+        }
+    }
+});
